@@ -55,8 +55,19 @@ class Goblin(Character):
     #     return "You have {} health and {} power". format(self.health, self.power)
 
 
+class Zombie(Character):
+
+    def __init__(self, health, power):
+        self.health = health
+        self.power = power
+
+
 hero = Hero(10, 5)
 goblin = Goblin(6, 2)
+
+
+# Zombie
+# 1zombie = Zombie(-1, -1)
 
 
 def main():
@@ -67,7 +78,10 @@ def main():
 
     # while goblin.health > 0 and hero.health > 0:
     while goblin.alive() and hero.alive():
-            #print("You have %d health and %d power." % (hero.health, hero.power))
+
+        # print(zombie.print_status())
+
+        #print("You have %d health and %d power." % (hero.health, hero.power))
         print(hero.print_status())
         # print("The goblin has %d health and %d power." %
         #       (goblin.health, goblin.power))
@@ -80,6 +94,9 @@ def main():
         print("> ",)
         user_input = input()
         if user_input == "1":
+
+            # hero.attack(zombie)
+
             # Hero attacks goblin
             hero.attack(goblin)
             print("You do %d damage to the goblin." % hero.power)
